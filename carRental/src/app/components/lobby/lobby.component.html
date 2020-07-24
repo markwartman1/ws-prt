@@ -1,0 +1,7 @@
+<p>lobby works!</p>
+<nav>
+    <a routerLink="/rental">Rental</a>
+    <a routerLink="/registration" style="padding-left: 10px;">Registration</a>
+</nav>
+
+<p *ngFor="let user of users" >{{user.name}} <span>{{ user.id }}</span></p>
