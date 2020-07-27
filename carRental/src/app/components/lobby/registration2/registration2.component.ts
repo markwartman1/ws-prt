@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class Registration2Component implements OnInit {
 
   answer = '';
+  genders = ['male', 'female'];
 
   constructor() { }
 
@@ -23,7 +24,8 @@ export class Registration2Component implements OnInit {
     console.log("username: "+form.value.username);
     console.log("eMail: "+form.value.email);
     console.log("questionAnswer: "+form.value.questionAnswer);
-    form.resetForm;
+    console.log("gender: "+form.value.gender);
+    form.reset();
   }
 
 }
