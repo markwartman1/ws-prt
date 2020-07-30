@@ -25,7 +25,10 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
-    
+    console.log(this.signupForm.value.username);
+    console.log(this.signupForm.value.email);
+    console.log(this.signupForm.value.gender);
+    this.signupForm.reset();
   }
 
 }
