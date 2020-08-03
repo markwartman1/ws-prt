@@ -34,6 +34,12 @@
                     </div>
                     <!-- <td class="align-middle">{{product.unitsInStock}}</td> -->
                 </div>
+
+                <!-- if products empty then display a message -->
+                <div class="alert alert-warning col-md-12" role="alert" *ngIf="products?.length == 0">
+                    <h3>No Products Found.</h3>
+                </div>
+
             </div>
         </div>
     </div>
