@@ -6,6 +6,7 @@ function exampleMap() {
         ['onion', 50]
     ]);
 
+    console.log("searching for cucumber:500?: "+recipeMap.get('cucumber'));
     // iterate over keys (vegetables)
     for (let vegetable of recipeMap.keys()) {
         console.log(vegetable); // cucumber, tomatoes, onion
