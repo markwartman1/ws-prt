@@ -11,6 +11,10 @@ function count(strings) {
         //let arrayDelimitedByPeriod = s.match( /[^\.!\?]+[\.!\?]+/g ); // from stackoverflow
         let arrayDelimitedByPeriod = s.match( /[\.]+/g );
         // str.match( /[^\.!\?]+[\.!\?]+/g );
+        console.log("here is the for loop");
+        for (const a in arrayDelimitedByPeriod) {
+            console.log(a);
+        }
 
         if (!map.has(str[0])) {
             map.set(str[0], arrayDelimitedByPeriod.length);
@@ -30,7 +34,8 @@ function start() {
         "Here is another. I hope this does it. Gets the accureate count.",
         "oh yeah.",
         "oh yeah.",
-        "oh yeah."
+        "oh yeah.",
+        "And, if your unsure just test a little more."
     ];
 
     console.log(count(sent));
