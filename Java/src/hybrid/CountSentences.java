@@ -36,6 +36,9 @@ public class CountSentences {
 				map.put(str[0], val);
 			}
 		}
+		System.out.println("The very first word in the sentence is put in as the key");
+		System.out.println("Sentence count is the value");
+		System.out.println(map);
 		return map;
 	}
 
