@@ -3,7 +3,7 @@ package hybrid;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CountRepeatSentencesLongString {
+public class remember {
 
 	public static void main(String[] args) {
 
@@ -19,31 +19,24 @@ public class CountRepeatSentencesLongString {
 
 		Map<String, Integer> map = new HashMap();
 		
-		String[] thestrings = strings.split("\\.");
-
-		for (String s : thestrings) {
+		String[] sentArr = strings.split("\\.");
+		
+		for(String s : sentArr) {
 			
 			s = s.trim();
 			
-			if (!map.containsKey(s)) {
+			if( !map.containsKey(s)) {
 				map.put(s, 1);
 			} else {
 				int val = map.get(s);
 				val++;
 				map.put(s, val);
 			}
-			
-			//s = s.replace(",", "");
-			//s = s.replace("\'", "");
-			//String[] str = s.split(" ");
-
-//			for(int i=0; i < s.length(); i++) {
-//				
-//				
-//			}
 		}
-		System.out.println("Entire sentence as the Key");
-		System.out.println(map);
+		
+		
+//		System.out.println("Entire sentence as the Key");
+//		System.out.println(map);
 		return map;
 	}
 

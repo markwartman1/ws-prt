@@ -1,7 +1,8 @@
 
 
 function potatoes(str) {
-	let arr = str.match(/(potato)/gi);
+    let arr = str.match(/(potato)/gi);
+    console.log(arr);
 	console.log(arr.length);
 	//return arr.length;
 }
