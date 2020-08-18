@@ -40,4 +40,8 @@ export class CartDetailsComponent implements OnInit {
     this.cartService.decrementQty(item);
   }
 
+  remove(item: CartItem) {
+    this.cartService.remove(item);
+  }
+
 }
