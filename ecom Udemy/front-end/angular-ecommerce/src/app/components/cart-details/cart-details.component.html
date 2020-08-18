@@ -33,7 +33,7 @@
                                         {{item.quantity}}
                                     </div>
                                     <div class="col">
-                                        <button class="btn btn-primary btn-sm">
+                                        <button (click)="decrementQty(item)" class="btn btn-primary btn-sm">
                                             <i class="fas fa-minus"></i>
                                         </button>
                                     </div>
@@ -41,6 +41,8 @@
                                 </div>
 
                             </div>
+
+                            <button class="btn btn-sm btn-primary mt-2">Remove</button>
 
                             <p class="mt-2">Subtotal: {{item.quantity * item.unitPrice | currency: 'USD'}}</p>
                         </td>
