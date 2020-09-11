@@ -17,8 +17,8 @@ export class AppComponent {
   
 
   onTerm(term: string) {
-    this.ws.search(term).subscribe((response: any) => {
-      this.pages = response.query.search;
+    this.ws.search(term).subscribe(data => {
+      this.pages = data;
     });
     
   }
