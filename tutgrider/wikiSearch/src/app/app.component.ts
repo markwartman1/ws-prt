@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WikipediaService } from './wikipedia.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'wikiSearch';
+  pages = [];
+
+  constructor(
+    private ws: WikipediaService
+  ) {}
+  
 
   onTerm(term: string) {
-    console.log("in app: " + term);
+    this.ws.search(term).subscribe((response: any) => {
+      this.pages = response.query.search;
+    });
     
   }
 }
+
+// https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Nelson%20Mandela&utf8=&format=json
+
+// https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=space
