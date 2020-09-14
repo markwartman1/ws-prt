@@ -1,0 +1,32 @@
+
+<div class="field">
+    <label class="label">{{label}}</label>
+    <div class="control">
+        <input 
+            class="input" 
+            type="text" 
+            [formControl]="control"
+            [ngClass]="{ 'is-danger': control.dirty && control.touched && control.errors }"
+        >
+        <!-- Just before 4:35 video #230 he makes a function for the above, But no... -->
+    </div>
+    <!-- <div *ngIf="!cardForm.get('name').valid">Value is required</div> -->
+    
+    <!-- This might work -->
+    <!-- <div *ngIf="cardForm.controls.name.errors">Value is required</div> -->
+    
+    
+    <ng-container *ngIf="
+        control.dirty &&
+        control.touched && 
+        control.errors">
+        <div class="help is-danger" *ngIf="control.errors.required">Value is required</div>
+        <div class="help is-danger" *ngIf="control.errors.minlength">
+            Value you entered is {{control.errors.minlength.actualLength}} 
+            characters long but must be at least {{control.errors.minlength.requiredLength}}</div>
+        <div class="help is-danger" *ngIf="control.errors.maxlength">Value entered is {{control.errors.maxlength.actualLength}} 
+            characters long but must be at least {{control.errors.maxlength.requiredLength}}</div>
+        <div class="help is-danger" *ngIf="control.errors.pattern">Invalid Format</div>
+    </ng-container>
+</div>
+
