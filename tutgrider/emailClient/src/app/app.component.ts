@@ -18,7 +18,11 @@ export class AppComponent {
     this.signedin$ = this.authService.signedin$;
   }
 
-  // ngOnInit() { 
-  //   this.authService.signedin$.subscribe( data => this.signedin = data);
-  // }
+  ngOnInit() { 
+
+    //this.authService.signedin$.subscribe( data => this.signedin = data);
+
+    this.authService.checkAuth().subscribe(() => {});
+    
+  }
 }

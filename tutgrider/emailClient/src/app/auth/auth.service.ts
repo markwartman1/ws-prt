@@ -30,4 +30,23 @@ export class AuthService {
     return this.http.post<{ username: string }>(this.url + '/auth/signup', credentials)
       .pipe(tap( () => this.signedin$.next(true)));
   }
+
+  checkAuth() {
+    return this.http.get<{authenticated: boolean, username: string}>(this.url + '/auth/signedin')
+      .pipe(tap(({authenticated}) => {
+        this.signedin$.next(authenticated);
+      }));
+  }
+
+  signout() {
+    return this.http.post(this.url + '/auth/signout', {})
+      .pipe(tap(() => this.signedin$.next(false)));
+  }
+
+  signin(credentials: {username: string, password: string}) {
+    return this.http.post(this.url + '/auth/signin', credentials)
+      .pipe(tap(() => {
+        this.signedin$.next(true);
+      }));
+  }
 }
