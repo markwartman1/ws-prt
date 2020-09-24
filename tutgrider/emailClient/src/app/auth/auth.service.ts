@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
 
   url = 'https://api.angular-email.com';
-  signedin$ = new BehaviorSubject(false);
+  signedin$ = new BehaviorSubject(null);
 
   constructor(
     private http: HttpClient
