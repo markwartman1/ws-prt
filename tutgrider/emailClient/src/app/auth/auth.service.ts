@@ -21,6 +21,12 @@ export class AuthService {
   });
   }
 
+  /**
+   * A third argument used to be passed that was essentially options...
+   * it used to be : { withCredential: true }...
+   * what this did was keep the cookie between page-refreshe's
+   * This was taken out to how HTTP Interceptor approach 
+   */
   signup(credentials: 
     { 
       username: string,
@@ -31,6 +37,12 @@ export class AuthService {
       .pipe(tap( () => this.signedin$.next(true)));
   }
 
+  /**
+   * A third argument used to be passed that was essentially options...
+   * it used to be : { withCredential: true }...
+   * what this did was keep the cookie between page-refreshe's 
+   * This was taken out to how HTTP Interceptor approach
+   */
   checkAuth() {
     return this.http.get<{authenticated: boolean, username: string}>(this.url + '/auth/signedin')
       .pipe(tap(({authenticated}) => {
